@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+"""
+@package odom_from_joint_transform
+@file odom_from_joint_transform
+@author Norawit Nangsue
+@brief Odometry-tf Generator from Joint Message used as a temporary module
+        Entry point to the node.
+Copyright (C) FIBO
+FIBO
+"""
+from odom_from_joint_transform.odom_from_joint_transform_ros import main
+
+if __name__ == '__main__':
+    main()

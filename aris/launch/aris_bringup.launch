@@ -1,0 +1,13 @@
+<launch>
+    <node name="rosserial" pkg="rosserial_python" type="serial_node.py" respawn="true" output="screen">
+        <param name="port" value="/dev/ttyACM0"/>
+        <param name="baud" value="230400"/>
+    </node>
+    <node name="joy" pkg="joy" type="joy_node" output="screen">
+        <param name="deadzone" value="0.1"/>
+    </node>
+    <node name="ackermann_twist_joy" pkg="ackermann_twist_joy" type="teleop_node" output="screen">
+        <param name="linear_vel_scale" value="0.4"/>
+    </node>
+    <node name="odom_from_joint_transform" pkg="odom_from_joint_transform" type="odom_from_joint_transform" output="screen">
+</launch>

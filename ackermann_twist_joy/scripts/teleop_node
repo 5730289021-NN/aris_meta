@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+"""
+@package ackermann_twist_joy
+@file teleop_node
+@author Norawit Nangsue
+@brief Convert Input Axes from JoyMessage into Ackermann Drive Message
+        Entry point to the node.
+Copyright (C) FIBO
+MIT
+"""
+from ackermann_twist_joy.teleop_node_ros import main
+
+if __name__ == '__main__':
+    main()

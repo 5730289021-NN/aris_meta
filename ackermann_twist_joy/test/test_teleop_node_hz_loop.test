@@ -1,0 +1,11 @@
+<launch>
+    <node name="teleop_node" pkg="ackermann_twist_joy" type="teleop_node" />
+    <!-- protected region teleop_node ackermann_cmd additional configuration begin -->
+    <!-- protected region teleop_node ackermann_cmd additional configuration end -->
+    <test test-name="hz_loop_test_teleop_node_ackermann_cmd" pkg="rostest" type="hztest" name="hz_test_teleop_node_ackermann_cmd">
+        <param name="topic" value="ackermann_cmd" />
+        <param name="hz" value="20" />
+        <param name="hzerror" value="1" />
+        <param name="test_duration" value="5.0" />
+    </test>
+</launch>

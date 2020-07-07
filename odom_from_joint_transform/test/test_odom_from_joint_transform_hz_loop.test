@@ -1,0 +1,11 @@
+<launch>
+    <node name="odom_from_joint_transform" pkg="odom_from_joint_transform" type="odom_from_joint_transform" />
+    <!-- protected region odom_from_joint_transform odom additional configuration begin -->
+    <!-- protected region odom_from_joint_transform odom additional configuration end -->
+    <test test-name="hz_loop_test_odom_from_joint_transform_odom" pkg="rostest" type="hztest" name="hz_test_odom_from_joint_transform_odom">
+        <param name="topic" value="odom" />
+        <param name="hz" value="20" />
+        <param name="hzerror" value="1" />
+        <param name="test_duration" value="5.0" />
+    </test>
+</launch>

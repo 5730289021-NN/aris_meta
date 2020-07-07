@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package author="Norawit Nangsue" author_email="norawitn@hotmail.com" copyright="FIBO" description="Odometry-tf Generator from Joint Message used as a temporary module" license="FIBO" name="odom_from_joint_transform" template="python_node_update">
+  <component frequency="20" name="odom_from_joint_transform">
+    <publisher description="Wheel Odometry" name="odom" type="nav_msgs::Odometry"/>
+    <subscriber description="Robot Joint States" name="joint_state" type="sensor_msgs::JointState"/>
+    <broadcaster description="TF version of Odometry" name="odom_to_base_footprint"/>
+    <parameter description="Circumstance of the wheel (2*PI*radius)" name="wheel_circ" type="double" value="0.12566"/>
+    <parameter description="Wheel Seperation Distance" name="sep_dist" type="double" value="0.20875"/>
+    <parameter description="Front Wheel Count to Meter Unit Ratio" name="front_cpr" type="int" value="6144"/>
+    <parameter description="Steering Angle Count to Radian Unit Ratio" name="rear_cpr" type="int" value="1440"/>
+    <parameter description="Invert Multiplication" name="invert_mul" type="int" value="1"/>
+  </component>
+
+  <depend>rospy</depend>
+  <depend>tf</depend>
+  <depend>nav_msgs</depend>
+  <depend>sensor_msgs</depend>
+</package>

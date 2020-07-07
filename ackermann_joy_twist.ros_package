@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package author="Norawit Nangsue" author_email="norawitn@hotmail.com" copyright="FIBO" description="Convert Input Axes from JoyMessage into Ackermann Drive Message" license="MIT" name="ackermann_twist_joy" template="python_node_update">
+  <component frequency="20" name="teleop_node">
+    <publisher description="Ackermann Drive Stamped" name="ackermann_cmd" type="ackermann_msgs::AckermannDriveStamped"/>
+    <subscriber description="Input Joy" name="joy" type="sensor_msgs::Joy"/>
+    <parameter description="Enable Drive Joy-axis Index" name="enb_index" type="int" value="5"/>
+    <parameter description="Linear Drive Joy-axis Index" name="linear_index" type="int" value="4"/>
+    <parameter description="Steering Joy-axis Index" name="steering_index" type="int" value="0"/>
+    <parameter description="Robot Linear Velocity Scale" name="linear_vel_scale" type="double" value="0.2"/>
+    <parameter description="Robot Steering Position Scale" name="steering_pos_scale" type="double" value="0.7853975"/> <!--pi/4-->
+  </component>
+  <depend>rospy</depend>
+  <depend>ackermann_msgs</depend>
+  <depend>sensor_msgs</depend>
+</package>

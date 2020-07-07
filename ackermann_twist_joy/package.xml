@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ackermann_twist_joy</name>
+  <description>Convert Input Axes from JoyMessage into Ackermann Drive Message</description>
+  <version>0.0.0</version>
+  <maintainer email="norawitn@hotmail.com">Norawit Nangsue</maintainer>
+  <author email="norawitn@hotmail.com">Norawit Nangsue</author>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- user dependencies -->
+  <depend>rospy</depend>
+  <depend>ackermann_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <test_depend>rostest</test_depend>
+
+  <!-- protected region additional package statements begin -->
+  <!-- protected region additional package statements end -->
+</package>

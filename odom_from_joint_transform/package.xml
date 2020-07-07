@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>odom_from_joint_transform</name>
+  <description>Odometry-tf Generator from Joint Message used as a temporary module</description>
+  <version>0.0.0</version>
+  <maintainer email="norawitn@hotmail.com">Norawit Nangsue</maintainer>
+  <author email="norawitn@hotmail.com">Norawit Nangsue</author>
+  <license>FIBO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- user dependencies -->
+  <depend>rospy</depend>
+  <depend>tf</depend>
+  <depend>nav_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <test_depend>rostest</test_depend>
+
+  <!-- protected region additional package statements begin -->
+  <!-- protected region additional package statements end -->
+</package>
