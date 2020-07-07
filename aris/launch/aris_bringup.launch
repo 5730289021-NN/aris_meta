@@ -9,5 +9,5 @@
     <node name="ackermann_twist_joy" pkg="ackermann_twist_joy" type="teleop_node" output="screen">
         <param name="linear_vel_scale" value="0.4"/>
     </node>
-    <node name="odom_from_joint_transform" pkg="odom_from_joint_transform" type="odom_from_joint_transform" output="screen">
+    <node name="odom_from_joint_transform" pkg="odom_from_joint_transform" type="odom_from_joint_transform" output="screen"/>
 </launch>
