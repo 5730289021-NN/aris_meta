@@ -96,7 +96,7 @@ class OdomFromJointTransformImplementation(object):
 
         # protected region user member variables begin #
         self.current_joint = [0, 0]
-        self.joint_diff = [0, 0]
+        self.joint_diff = 0
         # protected region user member variables end #
 
     def configure(self, config):
@@ -107,6 +107,7 @@ class OdomFromJointTransformImplementation(object):
         @return True on success
         """
         # protected region user configure begin #
+        rospy.loginfo('Odom from Joint Transform Started')
         return True
         # protected region user configure end #
 
@@ -124,7 +125,7 @@ class OdomFromJointTransformImplementation(object):
         if data.in_joint_state_updated:
             self.joint_diff = data.in_joint_state.position[0] - self.current_joint[0]
             # Calculate Forward Kinematic
-            dx_robot = config.invert_mul * config.wheel_circ * self.joint_diff[0] / config.front_cpr
+            dx_robot = config.invert_mul * config.wheel_circ * self.joint_diff / config.front_cpr
             da = dx_robot * - tan(data.in_joint_state.position[1]) / config.sep_dist
             # Obtain time and relative time from last update
             time_cur = rospy.Time.now()
