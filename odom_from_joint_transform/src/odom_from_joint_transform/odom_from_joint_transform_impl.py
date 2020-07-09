@@ -108,7 +108,6 @@ class OdomFromJointTransformImplementation(object):
         """
         # protected region user configure begin #
         rospy.loginfo('Odom from Joint Transform Started')
-        self.pos_cur = (0, 0, 0)
         return True
         # protected region user configure end #
 
@@ -148,7 +147,7 @@ class OdomFromJointTransformImplementation(object):
             data.out_odom.twist.twist.linear.x = dx_robot / time_rel.to_sec()
             data.out_odom.twist.twist.angular.z = da / time_rel.to_sec()
             # tf
-        self.passthrough.odom_to_base_footprint.sendTransform(pos_cur, (0, 0, quat_cur.z, quat_cur.w), time_cur, "base_footprint", "odom")
+            self.passthrough.odom_to_base_footprint.sendTransform(pos_cur, (0, 0, quat_cur.z, quat_cur.w), time_cur, "base_footprint", "odom")
         # protected region user update end #
 
     def terminate(self):
