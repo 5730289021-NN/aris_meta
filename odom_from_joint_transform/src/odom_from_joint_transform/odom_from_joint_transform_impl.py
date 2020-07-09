@@ -108,6 +108,7 @@ class OdomFromJointTransformImplementation(object):
         """
         # protected region user configure begin #
         rospy.loginfo('Odom from Joint Transform Started')
+        self.pos_cur = (0, 0, 0)
         return True
         # protected region user configure end #
 
