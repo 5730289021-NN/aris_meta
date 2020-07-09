@@ -148,6 +148,9 @@ class OdomFromJointTransformImplementation(object):
             data.out_odom.twist.twist.angular.z = da / time_rel.to_sec()
             # tf
             self.passthrough.odom_to_base_footprint.sendTransform(pos_cur, (0, 0, quat_cur.z, quat_cur.w), time_cur, "base_footprint", "odom")
+            
+            #Update Current Pose
+            self.current_joint = data.in_joint_state.position
         # protected region user update end #
 
     def terminate(self):
