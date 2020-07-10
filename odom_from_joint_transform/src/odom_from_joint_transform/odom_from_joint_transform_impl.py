@@ -125,6 +125,7 @@ class OdomFromJointTransformImplementation(object):
         if data.in_joint_state_updated:
             if data.out_odom.header.seq == 0:
                 self.current_joint = data.in_joint_state.position
+                data.out_odom.header.seq = 1
                 return
             self.joint_diff = data.in_joint_state.position[0] - self.current_joint[0]
             # Calculate Forward Kinematic
