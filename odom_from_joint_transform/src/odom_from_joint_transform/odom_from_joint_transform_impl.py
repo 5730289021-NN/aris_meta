@@ -123,6 +123,9 @@ class OdomFromJointTransformImplementation(object):
         """
         # protected region user update begin #
         if data.in_joint_state_updated:
+            if data.out_odom.seq == 0:
+                self.current_joint = data.in_joint_state
+                return
             self.joint_diff = data.in_joint_state.position[0] - self.current_joint[0]
             # Calculate Forward Kinematic
             dx_robot = config.invert_mul * config.wheel_circ * self.joint_diff / config.front_cpr
