@@ -126,7 +126,7 @@ class OdomFromJointTransformImplementation(object):
             self.joint_diff = data.in_joint_state.position[0] - self.current_joint[0]
             # Calculate Forward Kinematic
             dx_robot = config.invert_mul * config.wheel_circ * self.joint_diff / config.front_cpr
-            da = dx_robot * - tan(data.in_joint_state.position[1] / config.rear_cpr) / config.sep_dist
+            da = dx_robot * - tan(data.in_joint_state.position[1] / config.rear_cpr * 2 * 3.14159) / config.sep_dist
             # Obtain time and relative time from last update
             time_cur = rospy.Time.now()
             time_rel = time_cur - data.out_odom.header.stamp
